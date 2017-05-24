@@ -114,9 +114,9 @@ def cnnLayer():
     drop3 = dropout(pool3, keep_prob_5)
 
     # 全连接层
-    Wf = weightVariable([8*16*32, 512])
+    Wf = weightVariable([8*8*64, 512])
     bf = biasVariable([512])
-    drop3_flat = tf.reshape(drop3, [-1, 8*16*32])
+    drop3_flat = tf.reshape(drop3, [-1, 8*8*64])
     dense = tf.nn.relu(tf.matmul(drop3_flat, Wf) + bf)
     dropf = dropout(dense, keep_prob_75)
 
