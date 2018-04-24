@@ -123,7 +123,7 @@ def cnnLayer():
 
     # 输出层
     Wout = weightVariable([512,2])
-    bout = weightVariable([2])
+    bout = biasVariable([2])
     out = tf.add(tf.matmul(dropf, Wout), bout)
     return out
 
